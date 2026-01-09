@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 
 def wind_degree_to_direction(str_wind_degree):
@@ -65,7 +65,7 @@ def unix_timestamp_to_localtime(str_unix_timestamp, str_timezone_offset_seconds)
         return "API timezone data format error!"
 
     # Convert Unix timestamp to UTC datetime
-    utc_time = datetime.utcfromtimestamp(unix_timestamp)
+    utc_time = datetime.fromtimestamp(unix_timestamp, tz=timezone.utc)
 
     # Apply timezone offset
     local_time = utc_time + timedelta(seconds=timezone_offset_seconds)
