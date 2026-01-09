@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 from Util_Functions import (
     wind_degree_to_direction,
-    unix_timestamp_to_localtime,
+    unix_timestamp_to_nyc_time,
     convert_temperature,
 )
 
@@ -118,8 +118,8 @@ def write_to_file(weather_data, temperature_unit):
                 and "timezone" in weather_data
             ):
                 f.write(
-                    "\tToday's sunrise time   : "
-                    + unix_timestamp_to_localtime(
+                    "\tToday's sunrise time in EST  : "
+                    + unix_timestamp_to_nyc_time(
                         weather_data["sys"]["sunrise"], weather_data["timezone"]
                     )
                     + " \n"
@@ -132,8 +132,8 @@ def write_to_file(weather_data, temperature_unit):
                 and "timezone" in weather_data
             ):
                 f.write(
-                    "\tToday's sunset time    : "
-                    + unix_timestamp_to_localtime(
+                    "\tToday's sunset time in EST   : "
+                    + unix_timestamp_to_nyc_time(
                         weather_data["sys"]["sunset"], weather_data["timezone"]
                     )
                     + " \n"
