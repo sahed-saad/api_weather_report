@@ -23,19 +23,9 @@ Welcome to the Weather Information App! This application allows users to fetch c
 2. Run the application:
 
     ```bash
-    python weather_app.py
+    python API_Based_Weather_Report.py
     ```
-
-## Usage
-
-1. Obtain your OpenWeatherMap API key by signing up at [OpenWeatherMap](https://home.openweathermap.org/users/sign_up).
-
-2. Run the application:
-
-    ```bash
-    python weather_app.py
-    ```
-
+    
 3. Follow the on-screen prompts to enter your API key and the city name for which you want to fetch weather information.
 
    **Note:** When entering the city name, ensure to provide the following:
